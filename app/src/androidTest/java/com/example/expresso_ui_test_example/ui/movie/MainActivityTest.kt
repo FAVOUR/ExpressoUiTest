@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 class MainActivityTest{
 
    @Test
-   fun ftagment_bundleAdded_confirmbuncleisequalsOne()= runBlocking{
+   fun fragment_bundleAdded_confirmbuncleisequalsOne()= runBlocking{
        var activitySenerio = ActivityScenario.launch(MainActivity::class.java)
 
              delay(5000)
