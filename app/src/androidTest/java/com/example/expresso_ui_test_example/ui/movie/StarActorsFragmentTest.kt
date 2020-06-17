@@ -36,13 +36,17 @@ class StarActorsFragmentTest{
 
         var fragmentScenario = launchFragmentInContainer<StarActorsFragment>(
             fragmentArgs = bundle,
-            themeResId = R.style.AppTheme)   //Without the factory
+            themeResId = R.style.AppTheme)   //Without the factory but with theme
 
 //        delay(5000)
 
         onView(ViewMatchers.withId(R.id.star_actors_text))
             .check(matches(isDisplayed()))
-//        onView(ViewMatchers.withId(R.id.movie_description)).check(matches(withText("")))
+        onView(ViewMatchers.withId(R.id.star_actors_text)).check(matches(withText(movie.star_actors?.let {
+            StarActorsFragment.stringBuilderForStarActors(
+                it
+            )
+        })))
 
 
     }
